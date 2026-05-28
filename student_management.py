@@ -18,7 +18,8 @@ while True:
     print("                ")
     print(" 1 = ADD STUDENTS")
     print("2= DISPLAY STUNDENTS")
-    print("3 = EXIT")
+    print("3= SEARCH THE ROLL NO")
+    print("4 = EXIT")
     
     choise = int(input("enter the choice"))
     
@@ -39,11 +40,21 @@ while True:
         else:
             for stu in students_list:
                 stu.display()
-                
-                
     elif choise==3:
+        search_roll = int(input("enter the rollnumber to search"))
+        found = False
+        for stud in students_list:
+            if stud.rollno== search_roll:
+                stud.display()
+                found = True
+        if found == False:
+            print("student not found")
+            
+                
+    elif choise==4:
         break
     else:
         print("input a valid choice")
         
+
         
