@@ -19,7 +19,9 @@ while True:
     print(" 1 = ADD STUDENTS")
     print("2= DISPLAY STUNDENTS")
     print("3= SEARCH THE ROLL NO")
-    print("4 = EXIT")
+    print("4= DELETE THE STUDENT")
+    print("5= update the mark")
+    print("6 = EXIT")
     
     choise = int(input("enter the choice"))
     
@@ -49,9 +51,33 @@ while True:
                 found = True
         if found == False:
             print("student not found")
-            
-                
     elif choise==4:
+        delete_stu = int(input("enter the rollnumber to delete the student data"))
+        found = False
+        for studoc in students_list:
+            if studoc.rollno== delete_stu:
+                students_list.remove(studoc)
+                found= True
+                print("Student deleted successfully")
+        if found== False:
+                print("Student not found")
+            
+    elif choise==5:
+        stu_roll = int(input("enter the student roll no to update"))
+        stu_mark = int(input("enter the student new mark"))
+        found = False
+        for studo in students_list:
+            if studo.rollno==stu_roll:
+                studo.marks=stu_mark
+                found= True
+                print("Student MARK UPDATED successfully")
+        if found== False:
+                 print("Student not found")
+                 
+       
+            
+            
+    elif choise==6:
         break
     else:
         print("input a valid choice")
