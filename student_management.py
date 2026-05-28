@@ -1,6 +1,6 @@
 students_list = []
 
-class Student:
+class student:
 
     def __init__(self, name, rollno, marks):
         self.name = name
@@ -13,11 +13,11 @@ class Student:
         print("Marks:", self.marks)
 
 
-s1 = Student("ANAND", 720923243008, 96)
-s2 = Student("Rahul", 720923243009, 87)
-
-students_list.append(s1)
-students_list.append(s2)
+name = input("enter the name of the student")
+rollno = int(input("enter the roll no"))
+marks = int(input("enter the marks obtained"))
+student=student(name,rollno, marks)
+students_list.append(student)
 
 for student in students_list:
     student.display()
