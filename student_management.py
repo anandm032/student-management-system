@@ -1,6 +1,6 @@
 students_list = []
 
-class student:
+class Student:
 
     def __init__(self, name, rollno, marks):
         self.name = name
@@ -8,16 +8,42 @@ class student:
         self.marks = marks
 
     def display(self):
+        print("                 ")
         print("Name:", self.name)
         print("Roll No:", self.rollno)
         print("Marks:", self.marks)
 
 
-name = input("enter the name of the student")
-rollno = int(input("enter the roll no"))
-marks = int(input("enter the marks obtained"))
-student=student(name,rollno, marks)
-students_list.append(student)
+while True:
+    print("                ")
+    print(" 1 = ADD STUDENTS")
+    print("2= DISPLAY STUNDENTS")
+    print("3 = EXIT")
+    
+    choise = int(input("enter the choice"))
+    
+    
+    if choise==1:
+        name = input("enter the name of the student")
+        rollno = int(input("enter the roll no"))
+        marks = int(input("enter the marks obtained"))
 
-for student in students_list:
-    student.display()
+        student_obj=Student(name,rollno, marks)
+        students_list.append(student_obj)
+        
+        
+    elif choise==2:
+        if len(students_list) == 0:
+            print("No students found")
+
+        else:
+            for stu in students_list:
+                stu.display()
+                
+                
+    elif choise==3:
+        break
+    else:
+        print("input a valid choice")
+        
+        
